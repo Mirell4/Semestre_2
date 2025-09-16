@@ -1,40 +1,24 @@
-#include<stdio.h>
-/* faça um programa que permita ao usuário entrar com uma matriz de 3 x 3 números inteiros. Em seguida,
-gere um vetor unidimensional pela soma dos números de cada coluna da matriz e mostrar na tela esse vetor. */
+#include <stdio.h>
+/*12 FaÃ§a um programa que permita ao usuÃ¡rio entrar com uma matriz de 3 x 3 nÃºmeros
+ * inteiros. Em seguida, gere um vetor unidimensional pela soma dos nÃºmeros de
+ * cada coluna da matriz e mostrar na tela esse vetor. */
 
 int main() {
-    int matriz[3][3];
-    int vetor[3];
-    int i, j;
+  int mat[3][3];
+  int vet[3] = {0};
+  int i, j;
 
-    for(i = 0; i < 3; i++){
-        for(j = 0; j < 3; j++){
-            printf("Insira um numero para a linha %d e coluna %d: ", i, j);
-            scanf("%d", &matriz[i][j]);
-        }
+  for (i = 0; i < 3; i++) {
+    for (j = 0; j < 3; j++) {
+      printf("Insira m numero:\n");
+      scanf("%d", &mat[i][j]);
     }
+  }
 
-    for(j = 0; j < 3; j++){ 
-        int soma = 0;    
-        for(i = 0; i < 3; i++){ 
-            soma += matriz[i][j];
-        }
-        vetor[j] = soma;       
+  for (j = 0; j < 3; j++) {
+    for (i = 0; i < 3; i++) {
+      vet[j] += mat[i][j];
     }
-	
-	//imprime matriz
-    for(i = 0; i < 3; i++){
-        for(j = 0; j < 3; j++){
-            printf("%d ", matriz[i][j]);
-        }
-        printf("\n");
-    }
-	
-	//imprime vetor
-    for(j = 0; j < 3; j++){
-        printf("%d ", vetor[j]);
-    }
-    printf("\n");
-
-    return 0;
+    printf("%d ", vet[j]);
+  }
 }
